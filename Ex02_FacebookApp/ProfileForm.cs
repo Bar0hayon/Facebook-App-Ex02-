@@ -13,6 +13,10 @@ namespace Ex02_FacebookApp
 {
     public partial class ProfileForm : FacebookForm
     {
+        public ProfileForm()
+        {
+            InitializeComponent();
+        }
         public ProfileForm(User i_LoggedInUser, AppSettings i_AppSettings) :
             base(i_AppSettings)
         {

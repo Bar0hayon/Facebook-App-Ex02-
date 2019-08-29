@@ -13,6 +13,11 @@ namespace Ex02_FacebookApp
 {
     public partial class FriendsAndAlbumsForm : FacebookForm
     {
+        public FriendsAndAlbumsForm()
+        {
+            InitializeComponent();
+        }
+
         public FriendsAndAlbumsForm(User i_LoggedInUser, AppSettings i_AppSettings) :
             base(i_AppSettings)
         {

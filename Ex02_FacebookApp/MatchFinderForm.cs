@@ -13,6 +13,11 @@ namespace Ex02_FacebookApp
 {
     public partial class MatchFinderForm : FacebookForm
     {
+        public MatchFinderForm()
+        {
+            InitializeComponent();
+        }
+
         public MatchFinderForm(User i_LoggedInUser, AppSettings i_AppSettings) :
             base(i_AppSettings)
         {
