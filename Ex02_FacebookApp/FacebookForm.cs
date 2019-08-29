@@ -19,6 +19,11 @@ namespace Ex02_FacebookApp
         public event Action<FacebookForm> OnLoginLogoutButtonClicked;
         public User LoggedInUser { get; set; }
         private AppSettings m_AppSettings;
+        public FacebookForm()
+        {
+            InitializeComponent();
+        }
+
         public FacebookForm(AppSettings i_AppSettings)
         {
             InitializeComponent();
