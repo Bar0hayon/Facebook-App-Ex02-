@@ -18,27 +18,23 @@ namespace Ex02_FacebookApp
         public event Action<FacebookForm> OnFriendsAndAlbumsButtonClicked;
         public event Action<FacebookForm> OnLoginLogoutButtonClicked;
         public User LoggedInUser { get; set; }
-        private AppSettings m_AppSettings;
         public FacebookForm()
         {
             InitializeComponent();
         }
 
-        public FacebookForm(AppSettings i_AppSettings)
+        public void SetSettings(AppSettings i_AppSettings)
         {
-            InitializeComponent();
-            m_AppSettings = i_AppSettings;
-            this.Size = m_AppSettings.LastWindowSize;
-            this.Location = m_AppSettings.LastWindowLocation;
-            this.checkBoxRememberMe.Checked = m_AppSettings.RememberUser;
+            this.Size = i_AppSettings.LastWindowSize;
+            this.Location = i_AppSettings.LastWindowLocation;
+            this.checkBoxRememberMe.Checked = i_AppSettings.RememberUser;
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e)
+        public void GetSettings(ref AppSettings i_AppSettings)
         {
-            base.OnFormClosing(e);
-            m_AppSettings.LastWindowSize = this.Size;
-            m_AppSettings.LastWindowLocation = this.Location;
-            m_AppSettings.RememberUser = this.checkBoxRememberMe.Checked;
+            i_AppSettings.LastWindowLocation = this.Location;
+            i_AppSettings.LastWindowSize = this.Size;
+            i_AppSettings.RememberUser = this.checkBoxRememberMe.Checked;
         }
 
         protected override void OnShown(EventArgs e)
@@ -46,14 +42,22 @@ namespace Ex02_FacebookApp
             base.OnShown(e);
             if(LoggedInUser != null)
             {
-                pictureBoxNavPanel.LoadAsync(LoggedInUser.PictureNormalURL);
                 buttonLoginLogout.Text = "Logout";
+                if(pictureBoxNavPanel.ImageLocation == null)
+                {
+                    loadNavigationPicture();
+                }
             }
+        }
 
+        protected void loadNavigationPicture()
+        {
+            pictureBoxNavPanel.LoadAsync(LoggedInUser.PictureNormalURL);
         }
 
         private void ButtonProfile_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Yes;
             if (OnProfileButtonClicked != null)
             {
                 OnProfileButtonClicked.Invoke(this);
@@ -62,6 +66,7 @@ namespace Ex02_FacebookApp
 
         private void ButtonFriendsList_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Yes;
             if (OnFriendsAndAlbumsButtonClicked != null)
             {
                 OnFriendsAndAlbumsButtonClicked.Invoke(this);
@@ -70,6 +75,7 @@ namespace Ex02_FacebookApp
 
         private void ButtonMatchFinder_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Yes;
             if (OnMatchFinderButtonClicked != null)
             {
                 OnMatchFinderButtonClicked.Invoke(this);
@@ -78,10 +84,10 @@ namespace Ex02_FacebookApp
 
         private void ButtonLoginLogout_Click(object sender, EventArgs e)
         {
-            OnLoginLogoutButtonClicked.Invoke(this);
             if (buttonLoginLogout.Text == "Login")
             {
                 buttonLoginLogout.Text = "Logout";
+                OnLoginLogoutButtonClicked.Invoke(this);
                 pictureBoxNavPanel.Visible = true;
                 pictureBoxNavPanel.LoadAsync(LoggedInUser.PictureNormalURL);
             }
@@ -89,9 +95,15 @@ namespace Ex02_FacebookApp
             {
                 buttonLoginLogout.Text = "Login";
                 pictureBoxNavPanel.Visible = false;
+                OnLoginLogoutButtonClicked.Invoke(this);
             }
+        }
 
-            
+        public void EnableNavigationButtons(bool i_Enable)
+        {
+            this.buttonFriendsList.Enabled = i_Enable;
+            this.buttonMatchFinder.Enabled = i_Enable;
+            this.buttonProfile.Enabled = i_Enable;
         }
     }
 }

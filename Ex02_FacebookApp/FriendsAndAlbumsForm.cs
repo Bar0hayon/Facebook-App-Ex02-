@@ -18,11 +18,10 @@ namespace Ex02_FacebookApp
             InitializeComponent();
         }
 
-        public FriendsAndAlbumsForm(User i_LoggedInUser, AppSettings i_AppSettings) :
-            base(i_AppSettings)
-        {
-            InitializeComponent();
-            LoggedInUser = i_LoggedInUser;
-        }
+        //public FriendsAndAlbumsForm(User i_LoggedInUser)
+        //{
+        //    InitializeComponent();
+        //    LoggedInUser = i_LoggedInUser;
+        //}
     }
 }
