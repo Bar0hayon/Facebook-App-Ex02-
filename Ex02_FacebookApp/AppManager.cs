@@ -99,6 +99,7 @@ namespace Ex02_FacebookApp
         {
             v_LoggedIn = true;
             //buttonLoginLogout.Text = "Logout";
+            //.........
             if (!string.IsNullOrEmpty(m_LoginResult.AccessToken))
             {
                 m_LoggedInUser = m_LoginResult.LoggedInUser;
