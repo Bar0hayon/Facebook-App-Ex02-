@@ -132,11 +132,6 @@ namespace Ex02_FacebookApp
                 friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
             }
 
-            if (LoggedInUser.Friends.Count == 0)
-            {
-                MessageBox.Show("No Friends to retrieve :(");
-            }
-
             displayNumberOfFriends();
         }
 
