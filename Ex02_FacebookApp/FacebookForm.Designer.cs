@@ -58,9 +58,9 @@
             // buttonMatchFinder
             // 
             this.buttonMatchFinder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonMatchFinder.Location = new System.Drawing.Point(702, 12);
+            this.buttonMatchFinder.Location = new System.Drawing.Point(671, 12);
             this.buttonMatchFinder.Name = "buttonMatchFinder";
-            this.buttonMatchFinder.Size = new System.Drawing.Size(75, 54);
+            this.buttonMatchFinder.Size = new System.Drawing.Size(106, 54);
             this.buttonMatchFinder.TabIndex = 5;
             this.buttonMatchFinder.Text = "Match Finder";
             this.buttonMatchFinder.UseVisualStyleBackColor = true;
@@ -69,9 +69,9 @@
             // buttonFriendsList
             // 
             this.buttonFriendsList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonFriendsList.Location = new System.Drawing.Point(621, 12);
+            this.buttonFriendsList.Location = new System.Drawing.Point(560, 12);
             this.buttonFriendsList.Name = "buttonFriendsList";
-            this.buttonFriendsList.Size = new System.Drawing.Size(75, 54);
+            this.buttonFriendsList.Size = new System.Drawing.Size(106, 54);
             this.buttonFriendsList.TabIndex = 4;
             this.buttonFriendsList.Text = "Friends and Albums";
             this.buttonFriendsList.UseVisualStyleBackColor = true;
@@ -80,9 +80,9 @@
             // buttonProfile
             // 
             this.buttonProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonProfile.Location = new System.Drawing.Point(540, 12);
+            this.buttonProfile.Location = new System.Drawing.Point(449, 12);
             this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Size = new System.Drawing.Size(75, 54);
+            this.buttonProfile.Size = new System.Drawing.Size(106, 54);
             this.buttonProfile.TabIndex = 3;
             this.buttonProfile.Text = "Profile";
             this.buttonProfile.UseVisualStyleBackColor = true;

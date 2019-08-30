@@ -77,6 +77,7 @@ namespace Ex02_FacebookApp
             {
                 m_AppSettings.LastAccessToken = null;
                 m_AppSettings.SaveToFile();
+                MessageBox.Show("Good Bye...", "Logged Out", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 System.Environment.Exit(1);
             }
         }
