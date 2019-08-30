@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,19 +24,16 @@ namespace Ex02_FacebookApp
             InitializeComponent();
         }
 
-        //new Thread(fetchAlbumsList).Start();
-
         public void FetchData(User i_LoggedInUser)
         {
             LoggedInUser = i_LoggedInUser;
             loadNavigationPicture();
-            fetchAlbumsList();
+            new Thread(fetchAlbumsList).Start();
             fetchFriendsList();
         }
 
         public void fetchAlbumsList()
         {
-            //listViewSelectedAlbumPhotos.ItemSelectionChanged += ListViewSelectedAlbumPhotos_ItemSelectionChanged;
             int albumIndex = 0;
             m_ImageList.ImageSize = new Size(40, 40);
             foreach (Album album in LoggedInUser.Albums)
@@ -45,15 +43,26 @@ namespace Ex02_FacebookApp
                 WebClient fetchImageUsingUrl = new WebClient();
                 byte[] imageByte = fetchImageUsingUrl.DownloadData(m_ImageListUrls[albumIndex]);
                 MemoryStream stream = new MemoryStream(imageByte);
-
+                waitForControlToBeCreated();
                 Image newImage = Image.FromStream(stream);
-                m_ImageList.Images.Add(newImage);
-
-                listViewSelectedAlbumPhotos.Items.Add(album.Name, albumIndex);
+                listView1.Invoke(new Action(() => m_ImageList.Images.Add(newImage)));
+                waitForControlToBeCreated();
+                listViewSelectedAlbumPhotos.Invoke(new Action(() =>
+                listViewSelectedAlbumPhotos.Items.Add(album.Name, albumIndex)));
                 albumIndex++;
             }
 
-            listViewSelectedAlbumPhotos.LargeImageList = m_ImageList;
+            waitForControlToBeCreated();
+            listViewSelectedAlbumPhotos.Invoke(new Action(() =>
+            listViewSelectedAlbumPhotos.LargeImageList = m_ImageList));
+        }
+
+        private void waitForControlToBeCreated()
+        {
+            while (!this.IsHandleCreated)
+            {
+                Thread.Sleep(100);
+            }
         }
 
         private void fetchAlbumData(int i_AlbumIndex)
