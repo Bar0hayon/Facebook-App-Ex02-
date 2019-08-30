@@ -160,6 +160,7 @@ namespace Ex02_FacebookApp
 
         private void displayNumberOfFriends()   
         {
+            waitForControlToBeCreated();
             textBoxFriendsCounter.Invoke(new Action(() => 
             textBoxFriendsCounter.Text = listBoxFriendsList.Items.Count.ToString()));
             

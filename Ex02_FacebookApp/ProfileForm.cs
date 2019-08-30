@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -143,7 +144,12 @@ namespace Ex02_FacebookApp
             lvStatusInfo.Font = statusInfoFont;
             lvStatusInfo.BackColor = Color.LightBlue;
             ListViewItem lvSeparetor = new ListViewItem();
-            listViewUserStatuses.Items.AddRange(new ListViewItem[] { lvStatus, lvStatusInfo, lvSeparetor });
+            while (!this.IsHandleCreated)
+            {
+                Thread.Sleep(100);
+            }
+            listViewUserStatuses.Invoke(new Action(()=>
+            listViewUserStatuses.Items.AddRange(new ListViewItem[] { lvStatus, lvStatusInfo, lvSeparetor })));
             listViewUserStatuses.ItemSelectionChanged += listViewUserStatuses_ItemSelectionChanged;
         }
 
