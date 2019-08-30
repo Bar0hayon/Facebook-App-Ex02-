@@ -53,50 +53,50 @@
             this.textBoxAlbumOwner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAlbumOwner.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxAlbumOwner.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBoxAlbumOwner.Location = new System.Drawing.Point(782, 107);
+            this.textBoxAlbumOwner.Location = new System.Drawing.Point(785, 106);
             this.textBoxAlbumOwner.Name = "textBoxAlbumOwner";
             this.textBoxAlbumOwner.Size = new System.Drawing.Size(144, 16);
-            this.textBoxAlbumOwner.TabIndex = 50;
+            this.textBoxAlbumOwner.TabIndex = 67;
             // 
             // textBoxAlbumCreationTime
             // 
             this.textBoxAlbumCreationTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAlbumCreationTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxAlbumCreationTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBoxAlbumCreationTime.Location = new System.Drawing.Point(782, 131);
+            this.textBoxAlbumCreationTime.Location = new System.Drawing.Point(785, 130);
             this.textBoxAlbumCreationTime.Name = "textBoxAlbumCreationTime";
             this.textBoxAlbumCreationTime.Size = new System.Drawing.Size(144, 16);
-            this.textBoxAlbumCreationTime.TabIndex = 49;
+            this.textBoxAlbumCreationTime.TabIndex = 66;
             // 
             // textBoxAlbumLikesCount
             // 
             this.textBoxAlbumLikesCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAlbumLikesCount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxAlbumLikesCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBoxAlbumLikesCount.Location = new System.Drawing.Point(782, 155);
+            this.textBoxAlbumLikesCount.Location = new System.Drawing.Point(785, 154);
             this.textBoxAlbumLikesCount.Name = "textBoxAlbumLikesCount";
             this.textBoxAlbumLikesCount.Size = new System.Drawing.Size(144, 16);
-            this.textBoxAlbumLikesCount.TabIndex = 48;
+            this.textBoxAlbumLikesCount.TabIndex = 65;
             // 
             // textBoxAlbumCommentsCount
             // 
             this.textBoxAlbumCommentsCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAlbumCommentsCount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxAlbumCommentsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBoxAlbumCommentsCount.Location = new System.Drawing.Point(782, 179);
+            this.textBoxAlbumCommentsCount.Location = new System.Drawing.Point(785, 178);
             this.textBoxAlbumCommentsCount.Name = "textBoxAlbumCommentsCount";
             this.textBoxAlbumCommentsCount.Size = new System.Drawing.Size(144, 16);
-            this.textBoxAlbumCommentsCount.TabIndex = 47;
+            this.textBoxAlbumCommentsCount.TabIndex = 64;
             // 
             // textBoxCommentsCountReadOnly
             // 
             this.textBoxCommentsCountReadOnly.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxCommentsCountReadOnly.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxCommentsCountReadOnly.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBoxCommentsCountReadOnly.Location = new System.Drawing.Point(633, 179);
+            this.textBoxCommentsCountReadOnly.Location = new System.Drawing.Point(636, 178);
             this.textBoxCommentsCountReadOnly.Name = "textBoxCommentsCountReadOnly";
             this.textBoxCommentsCountReadOnly.Size = new System.Drawing.Size(144, 16);
-            this.textBoxCommentsCountReadOnly.TabIndex = 46;
+            this.textBoxCommentsCountReadOnly.TabIndex = 63;
             this.textBoxCommentsCountReadOnly.Text = "Number Of Comments:";
             // 
             // textBoxAlbumOwnerReadOnly
@@ -104,10 +104,10 @@
             this.textBoxAlbumOwnerReadOnly.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAlbumOwnerReadOnly.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxAlbumOwnerReadOnly.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBoxAlbumOwnerReadOnly.Location = new System.Drawing.Point(633, 107);
+            this.textBoxAlbumOwnerReadOnly.Location = new System.Drawing.Point(636, 106);
             this.textBoxAlbumOwnerReadOnly.Name = "textBoxAlbumOwnerReadOnly";
             this.textBoxAlbumOwnerReadOnly.Size = new System.Drawing.Size(144, 16);
-            this.textBoxAlbumOwnerReadOnly.TabIndex = 45;
+            this.textBoxAlbumOwnerReadOnly.TabIndex = 62;
             this.textBoxAlbumOwnerReadOnly.Text = "Created By:";
             // 
             // textBoxCreationTimeReadOnly
@@ -115,10 +115,10 @@
             this.textBoxCreationTimeReadOnly.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxCreationTimeReadOnly.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxCreationTimeReadOnly.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBoxCreationTimeReadOnly.Location = new System.Drawing.Point(633, 131);
+            this.textBoxCreationTimeReadOnly.Location = new System.Drawing.Point(636, 130);
             this.textBoxCreationTimeReadOnly.Name = "textBoxCreationTimeReadOnly";
             this.textBoxCreationTimeReadOnly.Size = new System.Drawing.Size(144, 16);
-            this.textBoxCreationTimeReadOnly.TabIndex = 44;
+            this.textBoxCreationTimeReadOnly.TabIndex = 61;
             this.textBoxCreationTimeReadOnly.Text = "Creation Time:";
             // 
             // textBoxLikesCountReadOnly
@@ -126,10 +126,10 @@
             this.textBoxLikesCountReadOnly.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLikesCountReadOnly.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxLikesCountReadOnly.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBoxLikesCountReadOnly.Location = new System.Drawing.Point(633, 155);
+            this.textBoxLikesCountReadOnly.Location = new System.Drawing.Point(636, 154);
             this.textBoxLikesCountReadOnly.Name = "textBoxLikesCountReadOnly";
             this.textBoxLikesCountReadOnly.Size = new System.Drawing.Size(144, 16);
-            this.textBoxLikesCountReadOnly.TabIndex = 43;
+            this.textBoxLikesCountReadOnly.TabIndex = 60;
             this.textBoxLikesCountReadOnly.Text = "Number Of Likes:";
             // 
             // textBoxPhotosTitle
@@ -137,29 +137,29 @@
             this.textBoxPhotosTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPhotosTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPhotosTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBoxPhotosTitle.Location = new System.Drawing.Point(633, 207);
+            this.textBoxPhotosTitle.Location = new System.Drawing.Point(636, 206);
             this.textBoxPhotosTitle.Name = "textBoxPhotosTitle";
             this.textBoxPhotosTitle.Size = new System.Drawing.Size(191, 18);
-            this.textBoxPhotosTitle.TabIndex = 42;
+            this.textBoxPhotosTitle.TabIndex = 59;
             this.textBoxPhotosTitle.Text = "Photos:";
             // 
             // listView1
             // 
             this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.Location = new System.Drawing.Point(633, 231);
+            this.listView1.Location = new System.Drawing.Point(636, 230);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(260, 220);
-            this.listView1.TabIndex = 41;
+            this.listView1.TabIndex = 58;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // textBoxFriendsListHeadLine
             // 
             this.textBoxFriendsListHeadLine.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxFriendsListHeadLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBoxFriendsListHeadLine.Location = new System.Drawing.Point(112, 68);
+            this.textBoxFriendsListHeadLine.Location = new System.Drawing.Point(115, 67);
             this.textBoxFriendsListHeadLine.Name = "textBoxFriendsListHeadLine";
             this.textBoxFriendsListHeadLine.Size = new System.Drawing.Size(219, 31);
-            this.textBoxFriendsListHeadLine.TabIndex = 40;
+            this.textBoxFriendsListHeadLine.TabIndex = 57;
             this.textBoxFriendsListHeadLine.Text = "Desig\'s Friends";
             this.textBoxFriendsListHeadLine.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -168,30 +168,29 @@
             this.textBoxAlbumsHeadLine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAlbumsHeadLine.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxAlbumsHeadLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBoxAlbumsHeadLine.Location = new System.Drawing.Point(595, 66);
+            this.textBoxAlbumsHeadLine.Location = new System.Drawing.Point(598, 65);
             this.textBoxAlbumsHeadLine.Name = "textBoxAlbumsHeadLine";
             this.textBoxAlbumsHeadLine.Size = new System.Drawing.Size(219, 31);
-            this.textBoxAlbumsHeadLine.TabIndex = 39;
+            this.textBoxAlbumsHeadLine.TabIndex = 56;
             this.textBoxAlbumsHeadLine.Text = "Albums";
             this.textBoxAlbumsHeadLine.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // listViewSelectedAlbumPhotos
             // 
             this.listViewSelectedAlbumPhotos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewSelectedAlbumPhotos.Location = new System.Drawing.Point(468, 104);
+            this.listViewSelectedAlbumPhotos.Location = new System.Drawing.Point(471, 103);
             this.listViewSelectedAlbumPhotos.Name = "listViewSelectedAlbumPhotos";
             this.listViewSelectedAlbumPhotos.Size = new System.Drawing.Size(143, 366);
-            this.listViewSelectedAlbumPhotos.TabIndex = 38;
+            this.listViewSelectedAlbumPhotos.TabIndex = 55;
             this.listViewSelectedAlbumPhotos.UseCompatibleStateImageBehavior = false;
-            this.listViewSelectedAlbumPhotos.SelectedIndexChanged += new System.EventHandler(this.listViewSelectedAlbumPhotos_SelectedIndexChanged);
             // 
             // pictureBoxSelectedFriend
             // 
-            this.pictureBoxSelectedFriend.Location = new System.Drawing.Point(301, 163);
+            this.pictureBoxSelectedFriend.Location = new System.Drawing.Point(304, 162);
             this.pictureBoxSelectedFriend.Name = "pictureBoxSelectedFriend";
             this.pictureBoxSelectedFriend.Size = new System.Drawing.Size(106, 88);
             this.pictureBoxSelectedFriend.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBoxSelectedFriend.TabIndex = 37;
+            this.pictureBoxSelectedFriend.TabIndex = 54;
             this.pictureBoxSelectedFriend.TabStop = false;
             // 
             // listBoxFriendsList
@@ -200,29 +199,29 @@
             this.listBoxFriendsList.FormattingEnabled = true;
             this.listBoxFriendsList.HorizontalExtent = 10;
             this.listBoxFriendsList.ItemHeight = 25;
-            this.listBoxFriendsList.Location = new System.Drawing.Point(11, 163);
+            this.listBoxFriendsList.Location = new System.Drawing.Point(14, 162);
             this.listBoxFriendsList.Name = "listBoxFriendsList";
             this.listBoxFriendsList.Size = new System.Drawing.Size(284, 254);
-            this.listBoxFriendsList.TabIndex = 36;
+            this.listBoxFriendsList.TabIndex = 53;
             // 
             // textBoxNumberOfFriends
             // 
             this.textBoxNumberOfFriends.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxNumberOfFriends.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBoxNumberOfFriends.Location = new System.Drawing.Point(11, 121);
+            this.textBoxNumberOfFriends.Location = new System.Drawing.Point(14, 120);
             this.textBoxNumberOfFriends.Name = "textBoxNumberOfFriends";
             this.textBoxNumberOfFriends.Size = new System.Drawing.Size(191, 18);
-            this.textBoxNumberOfFriends.TabIndex = 35;
+            this.textBoxNumberOfFriends.TabIndex = 52;
             this.textBoxNumberOfFriends.Text = "Total number of friends:";
             // 
             // textBoxFriendsCounter
             // 
             this.textBoxFriendsCounter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxFriendsCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBoxFriendsCounter.Location = new System.Drawing.Point(198, 121);
+            this.textBoxFriendsCounter.Location = new System.Drawing.Point(201, 120);
             this.textBoxFriendsCounter.Name = "textBoxFriendsCounter";
             this.textBoxFriendsCounter.Size = new System.Drawing.Size(39, 18);
-            this.textBoxFriendsCounter.TabIndex = 34;
+            this.textBoxFriendsCounter.TabIndex = 51;
             this.textBoxFriendsCounter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FriendsAndAlbumsForm
