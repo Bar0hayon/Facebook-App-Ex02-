@@ -112,8 +112,8 @@ namespace Ex02_FacebookApp
                 m_AppSettings.LastAccessToken = m_LoginResult.AccessToken;
                 m_LoginForm.LoggedInUser = m_LoggedInUser;
                 new Thread(fetchProfileData).Start();
-                //new Thread(fetchFriendsAndAlbumsData).Start();
-                fetchFriendsAndAlbumsData();
+                new Thread(fetchFriendsAndAlbumsData).Start();
+                //fetchFriendsAndAlbumsData();
                 m_MatchFinderForm.LoggedInUser = m_LoggedInUser;
                 m_LoginForm.EnableNavigationButtons(true);
 

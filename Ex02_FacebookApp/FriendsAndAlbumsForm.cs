@@ -30,6 +30,7 @@ namespace Ex02_FacebookApp
             LoggedInUser = i_LoggedInUser;
             loadNavigationPicture();
             fetchAlbumsList();
+            fetchFriendsList();
         }
 
         public void fetchAlbumsList()
@@ -100,6 +101,50 @@ namespace Ex02_FacebookApp
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void fetchFriendsList()
+        {
+            listBoxFriendsList.Items.Clear();
+            listBoxFriendsList.DisplayMember = "Name";
+            foreach (User friend in LoggedInUser.Friends)
+            {
+                listBoxFriendsList.Items.Add(friend);
+                friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+            }
+
+            if (LoggedInUser.Friends.Count == 0)
+            {
+                MessageBox.Show("No Friends to retrieve :(");
+            }
+
+            displayNumberOfFriends();
+        }
+
+        private void displaySelectedFriend()
+        {
+            if (listBoxFriendsList.SelectedItems.Count == 1)
+            {
+                User selectedFriend = listBoxFriendsList.SelectedItem as User;
+                if (selectedFriend.PictureNormalURL != null)
+                {
+                    pictureBoxSelectedFriend.LoadAsync(selectedFriend.PictureNormalURL);
+                }
+                else
+                {
+                    pictureBoxSelectedFriend.Image = pictureBoxSelectedFriend.ErrorImage;
+                }
+            }
+        }
+
+        private void displayNumberOfFriends()
+        {
+            textBoxFriendsCounter.Text = listBoxFriendsList.Items.Count.ToString();
+        }
+
+        private void listBoxFriendsList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            displaySelectedFriend();
         }
     }
 }

@@ -204,6 +204,7 @@
             this.listBoxFriendsList.Name = "listBoxFriendsList";
             this.listBoxFriendsList.Size = new System.Drawing.Size(284, 254);
             this.listBoxFriendsList.TabIndex = 53;
+            this.listBoxFriendsList.SelectedIndexChanged += new System.EventHandler(this.listBoxFriendsList_SelectedIndexChanged);
             // 
             // textBoxNumberOfFriends
             // 
