@@ -23,14 +23,14 @@ namespace Ex02_FacebookApp
             InitializeComponent();
         }
 
-        public FriendsAndAlbumsForm(User i_LoggedInUser)
-        {
-            InitializeComponent();
-            LoggedInUser = i_LoggedInUser;
-        }
         //new Thread(fetchAlbumsList).Start();
 
-
+        public void FetchData(User i_LoggedInUser)
+        {
+            LoggedInUser = i_LoggedInUser;
+            loadNavigationPicture();
+            fetchAlbumsList();
+        }
 
         public void fetchAlbumsList()
         {
@@ -55,7 +55,19 @@ namespace Ex02_FacebookApp
             listViewSelectedAlbumPhotos.LargeImageList = m_ImageList;
         }
 
-        private void listViewSelectedAlbumPhotos_SelectedIndexChanged(object sender, EventArgs e)
+        private void fetchAlbumData(int i_AlbumIndex)
+        {
+            textBoxAlbumCommentsCount.Text =
+                LoggedInUser.Albums[i_AlbumIndex].Comments.Count.ToString();
+            textBoxAlbumCreationTime.Text =
+                LoggedInUser.Albums[i_AlbumIndex].CreatedTime.ToString();
+            textBoxAlbumLikesCount.Text =
+                LoggedInUser.Albums[i_AlbumIndex].LikedBy.Count.ToString();
+            textBoxAlbumOwner.Text =
+                LoggedInUser.Albums[i_AlbumIndex].From.Name;
+        }
+
+        private void listViewSelectedAlbumPhotos_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             int albumIndex = 0;
             m_ImageList.ImageSize = new Size(40, 40);
@@ -88,18 +100,6 @@ namespace Ex02_FacebookApp
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void fetchAlbumData(int i_AlbumIndex)
-        {
-            textBoxAlbumCommentsCount.Text =
-                LoggedInUser.Albums[i_AlbumIndex].Comments.Count.ToString();
-            textBoxAlbumCreationTime.Text =
-                LoggedInUser.Albums[i_AlbumIndex].CreatedTime.ToString();
-            textBoxAlbumLikesCount.Text =
-                LoggedInUser.Albums[i_AlbumIndex].LikedBy.Count.ToString();
-            textBoxAlbumOwner.Text =
-                LoggedInUser.Albums[i_AlbumIndex].From.Name;
         }
     }
 }

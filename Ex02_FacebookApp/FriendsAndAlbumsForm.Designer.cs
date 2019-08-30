@@ -183,6 +183,7 @@
             this.listViewSelectedAlbumPhotos.Size = new System.Drawing.Size(143, 366);
             this.listViewSelectedAlbumPhotos.TabIndex = 55;
             this.listViewSelectedAlbumPhotos.UseCompatibleStateImageBehavior = false;
+            this.listViewSelectedAlbumPhotos.SelectedIndexChanged += new System.EventHandler(this.listViewSelectedAlbumPhotos_SelectedIndexChanged_1);
             // 
             // pictureBoxSelectedFriend
             // 

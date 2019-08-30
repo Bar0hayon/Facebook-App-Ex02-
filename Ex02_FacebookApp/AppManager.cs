@@ -112,8 +112,9 @@ namespace Ex02_FacebookApp
                 m_AppSettings.LastAccessToken = m_LoginResult.AccessToken;
                 m_LoginForm.LoggedInUser = m_LoggedInUser;
                 new Thread(fetchProfileData).Start();
+                //new Thread(fetchFriendsAndAlbumsData).Start();
+                fetchFriendsAndAlbumsData();
                 m_MatchFinderForm.LoggedInUser = m_LoggedInUser;
-                m_FriendsAndAlbumsForm.LoggedInUser = m_LoggedInUser;
                 m_LoginForm.EnableNavigationButtons(true);
 
                 //fetchProfile();
@@ -129,6 +130,11 @@ namespace Ex02_FacebookApp
         private static void fetchProfileData()
         {
             m_ProfileForm.FetchData(m_LoggedInUser);
+        }
+
+        private static void fetchFriendsAndAlbumsData()
+        {
+            m_FriendsAndAlbumsForm.FetchData(m_LoggedInUser);
         }
 
         private static void loggedOut()
