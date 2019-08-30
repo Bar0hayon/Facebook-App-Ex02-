@@ -15,18 +15,29 @@ namespace Ex02_FacebookApp
         private static MatchFinderForm m_MatchFinderForm = new MatchFinderForm();
         private static ProfileForm m_ProfileForm = new ProfileForm();
         private static FriendsAndAlbumsForm m_FriendsAndAlbumsForm = new FriendsAndAlbumsForm();
-        private static FacebookForm m_LoginForm = new FacebookForm();
+        private static LoginForm m_LoginForm = new LoginForm();
         private static User m_LoggedInUser;
         private static bool v_LoggedIn = false;
         private static AppSettings m_AppSettings = new AppSettings();
         private static LoginResult m_LoginResult;
+        private static FormsFacade m_FormsFacade = new FormsFacade();
 
         public static void Start()
         {
-            connectNavigationButtonsToEvents();
+            //connectNavigationButtonsToEvents();
+            addFormsToFacade();
+            m_FormsFacade.ConnectNavigationButtonsToEvents();
             m_AppSettings.LoadData();
             TryAutoConnectToFacebook();
             showDialogAccordingToAppSettings(m_LoginForm);
+        }
+
+        private static void addFormsToFacade()
+        {
+            m_FormsFacade.FormsList.Add(m_FriendsAndAlbumsForm);
+            m_FormsFacade.FormsList.Add(m_MatchFinderForm);
+            m_FormsFacade.FormsList.Add(m_ProfileForm);
+            m_FormsFacade.FormsList.Add(m_LoginForm);
         }
 
         private static void showDialogAccordingToAppSettings(FacebookForm i_FacebookForm)
@@ -56,7 +67,7 @@ namespace Ex02_FacebookApp
             }
         }
 
-        private static void onLoginLogoutButtonClicked(FacebookForm i_SenderForm)
+        public static void OnLoginLogoutButtonClicked(FacebookForm i_SenderForm)
         {
             if (!v_LoggedIn)
             {
@@ -111,15 +122,12 @@ namespace Ex02_FacebookApp
                 m_LoggedInUser = m_LoginResult.LoggedInUser;
                 m_AppSettings.LastAccessToken = m_LoginResult.AccessToken;
                 m_LoginForm.LoggedInUser = m_LoggedInUser;
-                new Thread(fetchProfileData).Start();
-                new Thread(fetchFriendsAndAlbumsData).Start();
+                //new Thread(fetchProfileData).Start();
+                //new Thread(fetchFriendsAndAlbumsData).Start();
                 //fetchFriendsAndAlbumsData();
-                m_MatchFinderForm.LoggedInUser = m_LoggedInUser;
+                //m_MatchFinderForm.LoggedInUser = m_LoggedInUser;
+                m_FormsFacade.FetchData(m_LoggedInUser);
                 m_LoginForm.EnableNavigationButtons(true);
-
-                //fetchProfile();
-                //fetchFriendsList();
-                //fetchAlbumsList();
             }
             else
             {
@@ -144,30 +152,30 @@ namespace Ex02_FacebookApp
             m_LoginForm.LoggedInUser = null;
         }
 
-        private static void connectNavigationButtonsToEvents()
-        {
-            m_LoginForm.OnFriendsAndAlbumsButtonClicked += onFriendsAndAlbumsButtonClicked;
-            m_LoginForm.OnMatchFinderButtonClicked += onMatchFinderButtonClicked;
-            m_LoginForm.OnProfileButtonClicked += onProfileButtonClicked;
-            m_LoginForm.OnLoginLogoutButtonClicked += onLoginLogoutButtonClicked;
+        //private static void connectNavigationButtonsToEvents()
+        //{
+        //    m_LoginForm.OnFriendsAndAlbumsButtonClicked += onFriendsAndAlbumsButtonClicked;
+        //    m_LoginForm.OnMatchFinderButtonClicked += onMatchFinderButtonClicked;
+        //    m_LoginForm.OnProfileButtonClicked += onProfileButtonClicked;
+        //    m_LoginForm.OnLoginLogoutButtonClicked += onLoginLogoutButtonClicked;
 
-            m_MatchFinderForm.OnProfileButtonClicked += onProfileButtonClicked;
-            m_FriendsAndAlbumsForm.OnProfileButtonClicked += onProfileButtonClicked;
-            m_ProfileForm.OnMatchFinderButtonClicked += onMatchFinderButtonClicked;
-            m_FriendsAndAlbumsForm.OnMatchFinderButtonClicked += onMatchFinderButtonClicked;
-            m_MatchFinderForm.OnFriendsAndAlbumsButtonClicked += onFriendsAndAlbumsButtonClicked;
-            m_ProfileForm.OnFriendsAndAlbumsButtonClicked += onFriendsAndAlbumsButtonClicked;
-            m_FriendsAndAlbumsForm.OnLoginLogoutButtonClicked += onLoginLogoutButtonClicked;
-            m_MatchFinderForm.OnLoginLogoutButtonClicked += onLoginLogoutButtonClicked;
-            m_ProfileForm.OnLoginLogoutButtonClicked += onLoginLogoutButtonClicked;
+        //    m_MatchFinderForm.OnProfileButtonClicked += onProfileButtonClicked;
+        //    m_FriendsAndAlbumsForm.OnProfileButtonClicked += onProfileButtonClicked;
+        //    m_ProfileForm.OnMatchFinderButtonClicked += onMatchFinderButtonClicked;
+        //    m_FriendsAndAlbumsForm.OnMatchFinderButtonClicked += onMatchFinderButtonClicked;
+        //    m_MatchFinderForm.OnFriendsAndAlbumsButtonClicked += onFriendsAndAlbumsButtonClicked;
+        //    m_ProfileForm.OnFriendsAndAlbumsButtonClicked += onFriendsAndAlbumsButtonClicked;
+        //    m_FriendsAndAlbumsForm.OnLoginLogoutButtonClicked += onLoginLogoutButtonClicked;
+        //    m_MatchFinderForm.OnLoginLogoutButtonClicked += onLoginLogoutButtonClicked;
+        //    m_ProfileForm.OnLoginLogoutButtonClicked += onLoginLogoutButtonClicked;
 
-            m_FriendsAndAlbumsForm.FormClosing += onFormClosing;
-            m_LoginForm.FormClosing += onFormClosing;
-            m_MatchFinderForm.FormClosing += onFormClosing;
-            m_ProfileForm.FormClosing += onFormClosing;
-        }
+        //    m_FriendsAndAlbumsForm.FormClosing += onFormClosing;
+        //    m_LoginForm.FormClosing += onFormClosing;
+        //    m_MatchFinderForm.FormClosing += onFormClosing;
+        //    m_ProfileForm.FormClosing += onFormClosing;
+        //}
 
-        private static void onFormClosing(object sender, FormClosingEventArgs e)
+        public static void OnFormClosing(object sender, FormClosingEventArgs e)
         {
             FacebookForm senderForm = sender as FacebookForm;
             senderForm.GetSettings(ref m_AppSettings);
@@ -177,10 +185,13 @@ namespace Ex02_FacebookApp
             }
         }
 
-        private static void onFriendsAndAlbumsButtonClicked(FacebookForm obj)
+        public static void OnFriendsAndAlbumsButtonClicked(FacebookForm i_SenderForm)
         {
-            obj.Close();
-            new Thread(showFriendsAndAlbumsForm).Start();
+            if (i_SenderForm != m_FriendsAndAlbumsForm)
+            {
+                i_SenderForm.Close();
+                new Thread(showFriendsAndAlbumsForm).Start();
+            }
         }
 
         private static void showFriendsAndAlbumsForm()
@@ -188,10 +199,13 @@ namespace Ex02_FacebookApp
             showDialogAccordingToAppSettings(m_FriendsAndAlbumsForm);
         }
 
-        private static void onMatchFinderButtonClicked(FacebookForm obj)
+        public static void OnMatchFinderButtonClicked(FacebookForm i_SenderForm)
         {
-            obj.Close();
-            new Thread(showMatchFinderForm).Start();
+            if (i_SenderForm != m_MatchFinderForm)
+            {
+                i_SenderForm.Close();
+                new Thread(showMatchFinderForm).Start();
+            }
         }
 
         private static void showMatchFinderForm()
@@ -199,10 +213,13 @@ namespace Ex02_FacebookApp
             showDialogAccordingToAppSettings(m_MatchFinderForm);
         }
 
-        private static void onProfileButtonClicked(FacebookForm i_FacebookForm)
+        public static void OnProfileButtonClicked(FacebookForm i_FacebookForm)
         {
-            i_FacebookForm.Close();
-            new Thread(showProfileForm).Start();
+            if (i_FacebookForm != m_ProfileForm)
+            {
+                i_FacebookForm.Close();
+                new Thread(showProfileForm).Start();
+            }
         }
 
         private static void showProfileForm()

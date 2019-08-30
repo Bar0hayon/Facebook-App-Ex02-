@@ -60,11 +60,18 @@
     <Compile Include="FacebookForm.Designer.cs">
       <DependentUpon>FacebookForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsFacade.cs" />
     <Compile Include="FriendsAndAlbumsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FriendsAndAlbumsForm.Designer.cs">
       <DependentUpon>FriendsAndAlbumsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MatchFinderForm.cs">
       <SubType>Form</SubType>
@@ -86,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FriendsAndAlbumsForm.resx">
       <DependentUpon>FriendsAndAlbumsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MatchFinderForm.resx">
       <DependentUpon>MatchFinderForm.cs</DependentUpon>

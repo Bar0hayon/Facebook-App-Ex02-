@@ -19,6 +19,18 @@ namespace Ex02_FacebookApp
             InitializeComponent();
         }
 
+        protected override void ButtonFriendsList_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Yes;
+            base.ButtonFriendsList_Click(sender, e);
+        }
+
+        protected override void ButtonProfile_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Yes;
+            base.ButtonProfile_Click(sender, e);
+        }
+
         private void ButtonFindMatch_Click(object sender, EventArgs e)
         {
             findMatch();

@@ -128,7 +128,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FacebookForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Login";
+            this.Text = "Facebook";
             this.panelNavigation.ResumeLayout(false);
             this.panelNavigation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNavPanel)).EndInit();

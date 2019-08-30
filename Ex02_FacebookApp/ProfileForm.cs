@@ -18,11 +18,22 @@ namespace Ex02_FacebookApp
             InitializeComponent();
         }
 
-        public void FetchData(User i_LoggedInUser)
+        public override void FetchData(User i_LoggedInUser)
         {
-            LoggedInUser = i_LoggedInUser;
-            loadNavigationPicture();
+            base.FetchData(i_LoggedInUser);
             fetchProfile();
+        }
+
+        protected override void ButtonMatchFinder_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Yes;
+            base.ButtonMatchFinder_Click(sender, e);
+        }
+
+        protected override void ButtonFriendsList_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Yes;
+            base.ButtonFriendsList_Click(sender, e);
         }
 
         private void ComboBoxStatusesSort_SelectedIndexChanged(object sender, EventArgs e)

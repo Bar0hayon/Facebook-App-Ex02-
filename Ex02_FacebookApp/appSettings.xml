@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <AppSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <LastWindowLocation>
-    <X>62</X>
-    <Y>89</Y>
+    <X>120</X>
+    <Y>62</Y>
   </LastWindowLocation>
   <LastWindowSize>
-    <Width>1004</Width>
+    <Width>755</Width>
     <Height>504</Height>
   </LastWindowSize>
   <RememberUser>true</RememberUser>

@@ -50,39 +50,45 @@ namespace Ex02_FacebookApp
             }
         }
 
+        public virtual void FetchData(User i_LoggedInUser)
+        {
+            LoggedInUser = i_LoggedInUser;
+            loadNavigationPicture();
+        }
+
         protected void loadNavigationPicture()
         {
             pictureBoxNavPanel.LoadAsync(LoggedInUser.PictureNormalURL);
         }
 
-        private void ButtonProfile_Click(object sender, EventArgs e)
+        protected virtual void ButtonProfile_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Yes;
+            //DialogResult = DialogResult.Yes;
             if (OnProfileButtonClicked != null)
             {
                 OnProfileButtonClicked.Invoke(this);
             }
         }
 
-        private void ButtonFriendsList_Click(object sender, EventArgs e)
+        protected virtual void ButtonFriendsList_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Yes;
+            //DialogResult = DialogResult.Yes;
             if (OnFriendsAndAlbumsButtonClicked != null)
             {
                 OnFriendsAndAlbumsButtonClicked.Invoke(this);
             }
         }
 
-        private void ButtonMatchFinder_Click(object sender, EventArgs e)
+        protected virtual void ButtonMatchFinder_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Yes;
+            //DialogResult = DialogResult.Yes;
             if (OnMatchFinderButtonClicked != null)
             {
                 OnMatchFinderButtonClicked.Invoke(this);
             }
         }
 
-        private void ButtonLoginLogout_Click(object sender, EventArgs e)
+        protected virtual void ButtonLoginLogout_Click(object sender, EventArgs e)
         {
             if (buttonLoginLogout.Text == "Login")
             {

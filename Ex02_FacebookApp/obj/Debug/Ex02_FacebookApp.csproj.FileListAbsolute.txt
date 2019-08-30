@@ -14,3 +14,4 @@ C:\Users\baroh\source\repos\C19 Ex02 BarOhayon 204074629 DanielMaaravi 204509780
 C:\Users\baroh\source\repos\C19 Ex02 BarOhayon 204074629 DanielMaaravi 204509780\Ex02_FacebookApp\obj\Debug\Ex02_FacebookApp.csproj.CopyComplete
 C:\Users\baroh\source\repos\C19 Ex02 BarOhayon 204074629 DanielMaaravi 204509780\Ex02_FacebookApp\obj\Debug\Ex02_FacebookApp.FriendsAndAlbumsForm.resources
 C:\Users\baroh\source\repos\C19 Ex02 BarOhayon 204074629 DanielMaaravi 204509780\Ex02_FacebookApp\obj\Debug\Ex02_FacebookApp.MatchFinderForm.resources
+C:\Users\baroh\source\repos\C19 Ex02 BarOhayon 204074629 DanielMaaravi 204509780\Ex02_FacebookApp\obj\Debug\Ex02_FacebookApp.LoginForm.resources
