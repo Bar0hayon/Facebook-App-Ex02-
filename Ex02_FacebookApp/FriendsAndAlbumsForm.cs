@@ -23,14 +23,14 @@ namespace Ex02_FacebookApp
             InitializeComponent();
         }
 
-        //public FriendsAndAlbumsForm(User i_LoggedInUser)
-        //{
-        //    InitializeComponent();
-        //    LoggedInUser = i_LoggedInUser;
-        //}
-            //new Thread(fetchAlbumsList).Start();
-            fetchAlbumsList();
+        public FriendsAndAlbumsForm(User i_LoggedInUser)
+        {
+            InitializeComponent();
+            LoggedInUser = i_LoggedInUser;
         }
+        //new Thread(fetchAlbumsList).Start();
+
+
 
         public void fetchAlbumsList()
         {
@@ -100,5 +100,6 @@ namespace Ex02_FacebookApp
                 LoggedInUser.Albums[i_AlbumIndex].LikedBy.Count.ToString();
             textBoxAlbumOwner.Text =
                 LoggedInUser.Albums[i_AlbumIndex].From.Name;
+        }
     }
 }
