@@ -24,14 +24,24 @@ namespace Ex02_FacebookApp
             InitializeComponent();
         }
 
-        public void FetchData(User i_LoggedInUser)
+        public override void FetchData(User i_LoggedInUser)
         {
-            LoggedInUser = i_LoggedInUser;
-            loadNavigationPicture();
+            base.FetchData(i_LoggedInUser);
             new Thread(fetchAlbumsList).Start();
             fetchFriendsList();
         }
 
+        protected override void ButtonMatchFinder_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Yes;
+            base.ButtonMatchFinder_Click(sender, e);
+        }
+
+        protected override void ButtonProfile_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Yes;
+            base.ButtonProfile_Click(sender, e);
+        }
         public void fetchAlbumsList()
         {
             int albumIndex = 0;
@@ -137,18 +147,22 @@ namespace Ex02_FacebookApp
                 User selectedFriend = listBoxFriendsList.SelectedItem as User;
                 if (selectedFriend.PictureNormalURL != null)
                 {
-                    pictureBoxSelectedFriend.LoadAsync(selectedFriend.PictureNormalURL);
+                    pictureBoxSelectedFriend.Invoke(new Action(() =>
+                    pictureBoxSelectedFriend.LoadAsync(selectedFriend.PictureNormalURL)));
                 }
                 else
                 {
-                    pictureBoxSelectedFriend.Image = pictureBoxSelectedFriend.ErrorImage;
+                    pictureBoxSelectedFriend.Invoke(new Action(() =>
+                    pictureBoxSelectedFriend.Image = pictureBoxSelectedFriend.ErrorImage));
                 }
             }
         }
 
-        private void displayNumberOfFriends()
+        private void displayNumberOfFriends()   
         {
-            textBoxFriendsCounter.Text = listBoxFriendsList.Items.Count.ToString();
+            textBoxFriendsCounter.Invoke(new Action(() => 
+            textBoxFriendsCounter.Text = listBoxFriendsList.Items.Count.ToString()));
+            
         }
 
         private void listBoxFriendsList_SelectedIndexChanged(object sender, EventArgs e)
