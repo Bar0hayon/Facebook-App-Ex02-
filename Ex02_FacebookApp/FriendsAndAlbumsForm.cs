@@ -71,7 +71,7 @@ namespace Ex02_FacebookApp
         {
             while (!this.IsHandleCreated)
             {
-                Thread.Sleep(100);
+                Thread.Sleep(200);
             }
         }
 

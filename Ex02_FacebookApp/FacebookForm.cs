@@ -63,7 +63,6 @@ namespace Ex02_FacebookApp
 
         protected virtual void ButtonProfile_Click(object sender, EventArgs e)
         {
-            //DialogResult = DialogResult.Yes;
             if (OnProfileButtonClicked != null)
             {
                 OnProfileButtonClicked.Invoke(this);
@@ -72,7 +71,6 @@ namespace Ex02_FacebookApp
 
         protected virtual void ButtonFriendsList_Click(object sender, EventArgs e)
         {
-            //DialogResult = DialogResult.Yes;
             if (OnFriendsAndAlbumsButtonClicked != null)
             {
                 OnFriendsAndAlbumsButtonClicked.Invoke(this);
@@ -81,7 +79,6 @@ namespace Ex02_FacebookApp
 
         protected virtual void ButtonMatchFinder_Click(object sender, EventArgs e)
         {
-            //DialogResult = DialogResult.Yes;
             if (OnMatchFinderButtonClicked != null)
             {
                 OnMatchFinderButtonClicked.Invoke(this);

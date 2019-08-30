@@ -24,7 +24,6 @@ namespace Ex02_FacebookApp
 
         public static void Start()
         {
-            //connectNavigationButtonsToEvents();
             addFormsToFacade();
             m_FormsFacade.ConnectNavigationButtonsToEvents();
             m_AppSettings.LoadData();
@@ -76,7 +75,9 @@ namespace Ex02_FacebookApp
             }
             else
             {
-                FacebookService.Logout(loggedOut);/////////////need to make our func
+                m_AppSettings.LastAccessToken = null;
+                m_AppSettings.SaveToFile();
+                System.Environment.Exit(1);
             }
         }
 
@@ -122,10 +123,6 @@ namespace Ex02_FacebookApp
                 m_LoggedInUser = m_LoginResult.LoggedInUser;
                 m_AppSettings.LastAccessToken = m_LoginResult.AccessToken;
                 m_LoginForm.LoggedInUser = m_LoggedInUser;
-                //new Thread(fetchProfileData).Start();
-                //new Thread(fetchFriendsAndAlbumsData).Start();
-                //fetchFriendsAndAlbumsData();
-                //m_MatchFinderForm.LoggedInUser = m_LoggedInUser;
                 m_FormsFacade.FetchData(m_LoggedInUser);
                 m_LoginForm.EnableNavigationButtons(true);
             }
@@ -151,29 +148,6 @@ namespace Ex02_FacebookApp
             m_LoginForm.EnableNavigationButtons(false);
             m_LoginForm.LoggedInUser = null;
         }
-
-        //private static void connectNavigationButtonsToEvents()
-        //{
-        //    m_LoginForm.OnFriendsAndAlbumsButtonClicked += onFriendsAndAlbumsButtonClicked;
-        //    m_LoginForm.OnMatchFinderButtonClicked += onMatchFinderButtonClicked;
-        //    m_LoginForm.OnProfileButtonClicked += onProfileButtonClicked;
-        //    m_LoginForm.OnLoginLogoutButtonClicked += onLoginLogoutButtonClicked;
-
-        //    m_MatchFinderForm.OnProfileButtonClicked += onProfileButtonClicked;
-        //    m_FriendsAndAlbumsForm.OnProfileButtonClicked += onProfileButtonClicked;
-        //    m_ProfileForm.OnMatchFinderButtonClicked += onMatchFinderButtonClicked;
-        //    m_FriendsAndAlbumsForm.OnMatchFinderButtonClicked += onMatchFinderButtonClicked;
-        //    m_MatchFinderForm.OnFriendsAndAlbumsButtonClicked += onFriendsAndAlbumsButtonClicked;
-        //    m_ProfileForm.OnFriendsAndAlbumsButtonClicked += onFriendsAndAlbumsButtonClicked;
-        //    m_FriendsAndAlbumsForm.OnLoginLogoutButtonClicked += onLoginLogoutButtonClicked;
-        //    m_MatchFinderForm.OnLoginLogoutButtonClicked += onLoginLogoutButtonClicked;
-        //    m_ProfileForm.OnLoginLogoutButtonClicked += onLoginLogoutButtonClicked;
-
-        //    m_FriendsAndAlbumsForm.FormClosing += onFormClosing;
-        //    m_LoginForm.FormClosing += onFormClosing;
-        //    m_MatchFinderForm.FormClosing += onFormClosing;
-        //    m_ProfileForm.FormClosing += onFormClosing;
-        //}
 
         public static void OnFormClosing(object sender, FormClosingEventArgs e)
         {
