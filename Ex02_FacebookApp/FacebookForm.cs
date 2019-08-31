@@ -26,6 +26,7 @@ namespace Ex02_FacebookApp
         public FacebookForm()
         {
             InitializeComponent();
+            this.MinimumSize = new Size(800, 600);
         }
 
         public void SetSettings(AppSettings i_AppSettings)

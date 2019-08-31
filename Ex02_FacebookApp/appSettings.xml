@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <AppSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <LastWindowLocation>
-    <X>195</X>
-    <Y>58</Y>
+    <X>63</X>
+    <Y>23</Y>
   </LastWindowLocation>
   <LastWindowSize>
-    <Width>907</Width>
-    <Height>531</Height>
+    <Width>1138</Width>
+    <Height>603</Height>
   </LastWindowSize>
-  <RememberUser>false</RememberUser>
-</AppSettings>ken>EAAUm6cZC4eUEBANKSrqmt2YtZBNfGQBqdNgMbObHqHYCVerZBz5NNnbN9RPXowc1Bo2f45pKujwd3oY2KKrb75QHlMtnXZAeDbfTbZBgreuaVqirjXY5hfG0Sa1j8mu2N1mEsS7FeLZCipkAqIgzrsxroRWafRknlhMYhjl5chJQZDZD</LastAccessToken>
-</AppSettings>gs>
+  <RememberUser>true</RememberUser>
+  <LastAccessToken>EAAUm6cZC4eUEBABjyNdAaENYiZCZBrNpKlG1zL2EBSKEcLJM7s2mx8PEtzz4IMQanIWaOhq6MQa5leWZCPkuY5o0L6oZBZCbGKi1qAQ9apFV3I8qZBTt7H6ZBRfzzrZCAcUL3dzFiUcJkZAKfMRcuGJjKOekpZA9qdImmVIz8upBUCtKQZDZD</LastAccessToken>
+</AppSettings>
