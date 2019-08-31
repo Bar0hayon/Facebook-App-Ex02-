@@ -1,5 +1,4 @@
-﻿using FacebookWrapper.ObjectModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FacebookWrapper.ObjectModel;
 
 namespace Ex02_FacebookApp
 {
@@ -148,7 +148,8 @@ namespace Ex02_FacebookApp
             {
                 Thread.Sleep(100);
             }
-            listViewUserStatuses.Invoke(new Action(()=>
+
+            listViewUserStatuses.Invoke(new Action(() => 
             listViewUserStatuses.Items.AddRange(new ListViewItem[] { lvStatus, lvStatusInfo, lvSeparetor })));
             listViewUserStatuses.ItemSelectionChanged += listViewUserStatuses_ItemSelectionChanged;
         }

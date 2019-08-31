@@ -1,5 +1,4 @@
-﻿using FacebookWrapper.ObjectModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FacebookWrapper.ObjectModel;
 
 namespace Ex02_FacebookApp
 {
     public partial class MatchFinderForm : FacebookForm
     {
         private List<User> m_MatchesList = new List<User>();
+
         public MatchFinderForm()
         {
             InitializeComponent();
@@ -38,20 +39,20 @@ namespace Ex02_FacebookApp
 
         private void findMatch()
         {
-            listBoxMatches.SelectedIndexChanged += ListBoxMatches_SelectedIndexChanged;
             if (findMatchRequestIsLegal())
             {
                 m_MatchesList.Clear();
                 try
                 {
+                    friendListBindingSource.DataSource = LoggedInUser.Friends;
                     foreach (User friend in LoggedInUser.Friends)
                     {
-                        if (isGenderMatch(friend) &&
-                            isRelationshipAvailable(friend) &&
-                            isAgeMatch(friend))
+                        if (!isGenderMatch(friend) ||
+                            !isRelationshipAvailable(friend) ||
+                            !isAgeMatch(friend))
                         {
-                            m_MatchesList.Add(friend);
-                            listBoxMatches.Items.Add(friend.Name);
+                             m_MatchesList.Remove(friend);
+                             listBoxMatches.Items.Remove(friend.Name);
                         }
                     }
 
@@ -82,21 +83,6 @@ namespace Ex02_FacebookApp
             return comboBoxMatchGender.SelectedItem != null
                 &&
                 numericUpDownMinAge.Value <= numericUpDownMaxAge.Value;
-        }
-
-        private void ListBoxMatches_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            labelMatchFoundBday.Visible = true;
-            labelMatchFoundGender.Visible = true;
-            labelMatchFoundName.Visible = true;
-            textBoxMatchFoundName.Visible = true;
-            textBoxMatchFoundGender.Visible = true;
-            textBoxMatchFoundBday.Visible = true;
-            pictureBoxMatch.Visible = true;
-            pictureBoxMatch.LoadAsync(m_MatchesList[listBoxMatches.SelectedIndex].PictureNormalURL);
-            textBoxMatchFoundName.Text = m_MatchesList[listBoxMatches.SelectedIndex].Name;
-            textBoxMatchFoundGender.Text = m_MatchesList[listBoxMatches.SelectedIndex].Gender.ToString();
-            textBoxMatchFoundBday.Text = m_MatchesList[listBoxMatches.SelectedIndex].Birthday;
         }
 
         private bool isAgeMatch(User i_Friend)
@@ -157,6 +143,5 @@ namespace Ex02_FacebookApp
 
             return isFriendGenderMatch && isFriendInterested;
         }
-
     }
 }

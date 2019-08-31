@@ -1,12 +1,12 @@
-﻿using FacebookWrapper;
-using FacebookWrapper.ObjectModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FacebookWrapper;
+using FacebookWrapper.ObjectModel;
 
 namespace Ex02_FacebookApp
 {
@@ -116,6 +116,7 @@ namespace Ex02_FacebookApp
                     MessageBoxIcon.Error);
             }
         }
+
         private static void loggedIn()
         {
             v_LoggedIn = true;

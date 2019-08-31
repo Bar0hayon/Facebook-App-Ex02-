@@ -1,6 +1,6 @@
 ﻿namespace Ex02_FacebookApp
 {
-    partial class FacebookForm
+    public partial class FacebookForm
     {
         /// <summary>
         /// Required designer variable.
@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -147,4 +148,3 @@
         private System.Windows.Forms.PictureBox pictureBoxNavPanel;
     }
 }
-

@@ -1,16 +1,17 @@
-﻿using FacebookWrapper.ObjectModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using FacebookWrapper.ObjectModel;
 
 namespace Ex02_FacebookApp
 {
-    class FormsFacade
+    public class FormsFacade
     {
         public List<FacebookForm> FormsList;
+
         public FormsFacade()
         {
             FormsList = new List<FacebookForm>();

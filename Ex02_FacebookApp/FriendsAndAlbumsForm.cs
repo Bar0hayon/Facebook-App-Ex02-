@@ -1,5 +1,4 @@
-﻿using FacebookWrapper.ObjectModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FacebookWrapper.ObjectModel;
 
 namespace Ex02_FacebookApp
 {
@@ -42,6 +42,7 @@ namespace Ex02_FacebookApp
             DialogResult = DialogResult.Yes;
             base.ButtonProfile_Click(sender, e);
         }
+
         public void fetchAlbumsList()
         {
             int albumIndex = 0;
@@ -158,7 +159,6 @@ namespace Ex02_FacebookApp
             waitForControlToBeCreated();
             textBoxFriendsCounter.Invoke(new Action(() => 
             textBoxFriendsCounter.Text = listBoxFriendsList.Items.Count.ToString()));
-            
         }
 
         private void listBoxFriendsList_SelectedIndexChanged(object sender, EventArgs e)

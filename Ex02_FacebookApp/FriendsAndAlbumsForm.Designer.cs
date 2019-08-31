@@ -1,6 +1,6 @@
 ﻿namespace Ex02_FacebookApp
 {
-    partial class FriendsAndAlbumsForm
+    public partial class FriendsAndAlbumsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 

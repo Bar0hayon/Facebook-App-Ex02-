@@ -1,5 +1,4 @@
-﻿using FacebookWrapper.ObjectModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,16 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FacebookWrapper.ObjectModel;
 
 namespace Ex02_FacebookApp
 {
     public partial class FacebookForm : Form
     {
         public event Action<FacebookForm> OnProfileButtonClicked;
+
         public event Action<FacebookForm> OnMatchFinderButtonClicked;
+
         public event Action<FacebookForm> OnFriendsAndAlbumsButtonClicked;
+
         public event Action<FacebookForm> OnLoginLogoutButtonClicked;
+
         public User LoggedInUser { get; set; }
+
         public FacebookForm()
         {
             InitializeComponent();
